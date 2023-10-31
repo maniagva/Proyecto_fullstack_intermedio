@@ -161,7 +161,7 @@
   /* Estilos seccion principal */
   #principal{
     width: 100%;
-    height: 85%;
+    height: 100%;
     background: url(../img/fondo.jpg) no-repeat;
     background-size: cover;
     background-position: center;
@@ -191,7 +191,7 @@
   }
 
   /* Estilos de los botones */
-.btn_registro, .btn_ingreso{
+#btn_registro, #btn_ingreso{
   width: 160px;
   height: 55px;
   font-size: 20px;
@@ -205,7 +205,7 @@
   color: #280703;
 }
 
-.btn_registro:hover, .btn_ingreso:hover {
+#btn_registro:hover, #btn_ingreso:hover {
   background-color: #2E574F;
   cursor: pointer;
   transition: all 1s;
@@ -274,10 +274,6 @@
   grid-gap: 20px;
 }
 
-/* .lista_productos h3 {
-  font-size: 30px;
-} */
-
 .lista1, .lista2 {
   display: contents;
 }
@@ -309,6 +305,7 @@ footer .main_footer{
   height: auto;
   color: #280703;
 }
+
 footer .main_footer .datos_contacto,
 footer .main_footer .redes_sociales {
   width: 50%;

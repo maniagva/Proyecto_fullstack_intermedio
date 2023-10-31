@@ -10,6 +10,7 @@
     MUJARI es una empresa sin fines de lucro formada por mujeres comprometidas en transformar el cacao de los cacaocultores del Piedemonte Llanero del Meta en productos de alta calidad. Garantizamos la trazabilidad desde la obtención del grano hasta la fabricación de nuestros productos con amor y dedicación. Estamos felices de llevar la calidad y el cariño de MUJARI a tu hogar y tu familia.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles_modal.css">
     <title>Mujari cafe y cacao</title>
 </head>
 
@@ -36,6 +37,8 @@
             </div>
         </nav>
     </header>
+
+    <!-- Informacion de la empresa -->
     <section id="principal">
         <div class="info">
             <h1>Mujari</h1>
@@ -48,10 +51,37 @@
                 nos
                 hace feliz llegar a tu hogar.
             </p>
-            <button class="btn_registro">Registrate</button>
-            <button class="btn_ingreso">Ingresa</button>
+            <button id="btn_registro">Registrate</button>
+            <button id="btn_ingreso">Ingresa</button>
         </div>
     </section>
+    <!-- seccion modal -->
+    <section>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <h2>Formulario de Registro</h2>
+                <form id="registrationForm">
+                    <br>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <br>
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <br>
+                    <br>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                    <br>
+                    <br>
+                    <button class="register" type="submit">Continuar</button>
+                    <button class="close" id="closeModalBtn">Cerrar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- lineas -->
     <section id="lineas">
         <div class="lineas_countainer">
             <div class="linea_cacao">
@@ -68,6 +98,8 @@
             </div>
         </div>
     </section>
+
+    <!-- productos -->
     <section id="productos">
         <h2>Nuestros Productos</h2>
         <div class="lista_productos">
@@ -149,6 +181,7 @@
     </footer>
 
     <script src="js/script_menu.js"></script>
+    <script src="js/script_modal.js"></script>
 </body>
 
 </html>

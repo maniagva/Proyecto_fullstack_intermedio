@@ -1,0 +1,73 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #280703;
+}
+
+.modal-content {
+    width: 70%;
+    margin-top: 10%;
+    margin-left: 15%;
+    padding-bottom: 20px;
+    background-color: #2e574fec;
+    border-radius: 10px;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.modal-content h2 {
+    font-size: 35px;
+    padding: 20px;
+}
+
+#registrationForm {
+    margin: 0;
+    padding: 0;
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 75%;
+    padding: 5px;
+    margin-bottom: 0px;
+    border: 1px solid #280703;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+button.register,
+button.close {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #280703;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+button.close {
+    color: #280703;
+    margin-left: 10px;
+}
+
+button.close:hover, button.register:hover {
+    background-color: #d3c84fac;
+    transition: all 1s;
+}
+
