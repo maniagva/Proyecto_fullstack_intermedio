@@ -5,42 +5,60 @@ var modal = document.getElementById("myModal");
 var registrationForm = document.getElementById("registrationForm");
 var modalVisible = false;
 
-function showModal(){
+// Modal de login
+var openModalButton = document.getElementById('btn_ingreso');
+var closeModalButton = document.getElementById('close-modal-login');
+var loginModal = document.getElementById('login-modal');
+
+window.onload = function() {
+    loginModal.style.display = 'none';
+};
+// Funciones para mostrar y ocultar el modal
+function showModal() {
     modal.style.display = "block";
     modalVisible = true;
 }
 
-function hideModal(){
+function hideModal() {
     modal.style.display = "none";
     modalVisible = false;
 }
-showModalBtn.onclick = function() {
-    showModal();
-}
 
-closeModalBtn.onclick = function() {
-    hideModal();
-}
+showModalBtn.onclick = showModal;
+closeModalBtn.onclick = hideModal;
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (modalVisible && event.target == modal) {
         hideModal();
     }
 }
 
-// Manejar el envío del formulario de registro
-registrationForm.onsubmit = function(event) {
-    event.preventDefault(); // Evitar el envío del formulario por defecto
+// Formulario de registro
+registrationForm.onsubmit = function (event) {
+    event.preventDefault();
 
     // Obtener los valores del formulario
     var nombre = document.getElementById("nombre").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 
-    // Realizar la lógica de registro aquí (por ejemplo, enviar los datos al servidor)
-
-    // Cerrar el modal después del registro
     hideModal();
 }
 
+// Eventos para abrir y cerrar el modal de login
+openModalButton.addEventListener('click', function () {
+    loginModal.style.display = 'block';
+});
+
+closeModalButton.addEventListener('click', function () {
+    loginModal.style.display = 'none';
+});
+
+window.addEventListener('click', function (event) {
+    if (event.target == loginModal) {
+        loginModal.style.display = 'none';
+    }
+});
+
+// Ocultar el modal al inicio
 hideModal();

@@ -172,7 +172,8 @@
     top: 180px;
     left: 50px;
     width: 500px;
-    height: 480px;
+    /* height: 480px; */
+    height: 50vh;
   }
 
   #principal .info h1{
@@ -310,6 +311,7 @@ footer .main_footer .datos_contacto,
 footer .main_footer .redes_sociales {
   width: 50%;
   height: auto;
+  text-align: left;
 }
 
 footer .copyright{
@@ -317,20 +319,20 @@ footer .copyright{
   height: 30px;
   background-color: #D3C94F;
   text-align: center;
-  font-size: 16px;
+  font-size: 13px;
   color: #280703;
   line-height: 30px;
 }
 
 footer .main_footer h3 {
   font-size: 30px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding:20px 0;
 }
 
 footer .main_footer ul {
   list-style: none;
   padding-bottom: 20px;
+  text-align: left;
 }
 footer .main_footer .datos_contacto{
   padding-left: 20px;
@@ -338,7 +340,7 @@ footer .main_footer .datos_contacto{
 
 footer .main_footer .datos_contacto img {
   height: 25px;
-  padding: 0px 20px;
+  margin-right: 20px;
 }
 
 footer .main_footer .redes_sociales{
@@ -351,6 +353,7 @@ footer .main_footer .redes_sociales{
 }
 footer .main_footer .redes_sociales img {
   margin: 20px;
+  text-align: right;
 }
 footer .main_footer .redes_sociales img:hover{
   cursor: pointer;
@@ -358,6 +361,7 @@ footer .main_footer .redes_sociales img:hover{
   transition: all 1s;
   border-radius: 10px;
 }
+
 
 /* Estilos para el responsive */
   
@@ -454,5 +458,23 @@ footer .main_footer .redes_sociales {
   font-size: 25px;
 }
 
+    footer .main_footer .datos_contacto{
+      width: 80%;
+      padding-left: 10%;
+    }
+    footer .main_footer .datos_contacto img{
+      padding-left: 10%;
+    }
 
+    footer .main_footer .redes_sociales {
+        max-width: 100%;
+    }
+
+    footer .main_footer .redes_sociales {
+        text-align: center;
+    }
+
+    .copyright {
+      font-size: 25px;
+    }
 }
