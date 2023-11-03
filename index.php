@@ -1,3 +1,18 @@
+<?php
+
+if (isset($_GET['status'])) {
+    if ($_GET['status'] == 1) {
+        echo '<script>alert("registro éxitoso");</script>';
+    }
+    if ($_GET['status'] == 2) {
+        echo '<script>alert("Usuario ya existe");</script>';
+    }
+    if ($_GET['status'] == 3) {
+        echo '<script>alert("Usuario o Contraseña incorrecto");</script>';
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -59,11 +74,19 @@
     <section>
         <div id="myModal" class="modal">
             <div class="modal-content">
-                <h2>Formulario de Registro</h2>
-                <form id="registrationForm">
+                <h2>Registro</h2>
+                <form action="back/registro.php" method="post" id="registrationForm">
                     <br>
-                    <label for="nombre">Nombre:</label>
+                    <label for="nombre">Nombres:</label>
                     <input type="text" id="nombre" name="nombre" required>
+                    <br>
+                    <br>
+                    <label for="nombre">Apellidos:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                    <br>
+                    <br>
+                    <label for="nombre">Numero de identificacion:</label>
+                    <input type="text" id="identificacion" name="identificacion" required>
                     <br>
                     <br>
                     <label for="email">Email:</label>
@@ -74,24 +97,23 @@
                     <input type="password" id="password" name="password" required>
                     <br>
                     <br>
-                    <button class="register" type="submit">Continuar</button>
+                    <button class="register" type="submit" name="btnRegister">Continuar</button>
                     <button class="close" id="closeModalBtn">Cerrar</button>
                 </form>
             </div>
         </div>
         <div id="login-modal" class="modal-login">
             <div class="modal-content-login">
-                <!-- <span class="close-login" id="close-modal-login">&times;</span> -->
                 <h2>Iniciar sesión</h2>
-                <form id="login-form">
+                <form action="back/login.php" method="post" id="login-form">
                     <br>
-                    <input type="text" placeholder="Nombre de usuario" id="username">
-                    <br>
-                    <br>
-                    <input type="password" placeholder="Contraseña" id="password">
+                    <input name="usuario" type="text" placeholder="Usuario" id="username">
                     <br>
                     <br>
-                    <button class="login" type="submit">Iniciar sesión</button>
+                    <input name="contrasena" type="password" placeholder="Contraseña" id="password">
+                    <br>
+                    <br>
+                    <button name="login_btn" class="login" type="submit">Iniciar sesión</button>
                     <button class="close-login" id="close-modal-login">Cerrar</button>
                 </form>
             </div>

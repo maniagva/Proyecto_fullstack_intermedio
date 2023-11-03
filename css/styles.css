@@ -9,16 +9,16 @@
 
 /* Estilos generales */
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto Serif', serif;
-    scroll-behavior: smooth;
-    font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  box-sizing: border-box;
   }
   
   body {
-    height: 100vh;
-    width: 100%;
+    font-family: 'Roboto Serif', serif;
+    font-weight: bold;
+    scroll-behavior: smooth;
   }
   
   .logo img{
@@ -161,10 +161,11 @@
   /* Estilos seccion principal */
   #principal{
     width: 100%;
-    height: 100%;
+    height: 973px;
+    z-index: -2;
     background: url(../img/fondo.jpg) no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
   }
 
   #principal .info{
@@ -172,7 +173,6 @@
     top: 180px;
     left: 50px;
     width: 500px;
-    /* height: 480px; */
     height: 50vh;
   }
 
@@ -231,7 +231,6 @@
   
   .lineas_countainer {
     margin-top: 20px;
-    flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -302,7 +301,7 @@ footer .main_footer{
   width: 80%;
   margin-left: 15%;
   padding-top: 5px;
-  display: inline-flex;
+  display: flex;
   height: auto;
   color: #280703;
 }
@@ -345,7 +344,7 @@ footer .main_footer .datos_contacto img {
 
 footer .main_footer .redes_sociales{
   width: 90%;
-  display: inline-flex;
+  display: flex;
   height: 200px;
   align-items: center;
   justify-content: space-around;
@@ -357,7 +356,7 @@ footer .main_footer .redes_sociales img {
 }
 footer .main_footer .redes_sociales img:hover{
   cursor: pointer;
-  -webkit-box-shadow: 0px 0px 28px 0px rgba(249, 249, 249, 0.75);
+  box-shadow: 0px 0px 28px 0px rgba(249, 249, 249, 0.75);
   transition: all 1s;
   border-radius: 10px;
 }
@@ -370,9 +369,7 @@ footer .main_footer .redes_sociales img:hover{
 /* responsive lista de productos */
 
   .lista_productos {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
 }
 
 .lista1, .lista2 {
@@ -381,7 +378,6 @@ footer .main_footer .redes_sociales img:hover{
 
 .lista1 div, .lista2 div {
     text-align: center;
-    padding: 20px;
 }
 
 .lista1 img, .lista2 img {
@@ -392,7 +388,6 @@ footer .main_footer .redes_sociales img:hover{
 /* responsive footer */
 
 footer .main_footer{
-  display: flex;
   flex-direction: column;
 }
 footer .main_footer .datos_contacto {
@@ -443,11 +438,6 @@ footer .main_footer .redes_sociales {
     text-align: center;
 }
 
-#productos .lista1 div,
-#productos .lista2 div {
-    margin: 20px 0;
-}
-
 #productos img {
     max-width: 90%;
     height: 150px;
@@ -468,11 +458,10 @@ footer .main_footer .redes_sociales {
 
     footer .main_footer .redes_sociales {
         max-width: 100%;
-    }
-
-    footer .main_footer .redes_sociales {
         text-align: center;
     }
+
+
 
     .copyright {
       font-size: 25px;
