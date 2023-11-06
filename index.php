@@ -75,27 +75,23 @@ if (isset($_GET['status'])) {
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <h2>Registro</h2>
-                <form action="back/registro.php" method="post" id="registrationForm">
-                    <br>
+                <form action="back/registro.php" method="post" id="registrationForm"
+                    onSubmit="return validarPassword()">
                     <label for="nombre">Nombres:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                    <br>
-                    <br>
-                    <label for="nombre">Apellidos:</label>
-                    <input type="text" id="apellido" name="apellido" required>
-                    <br>
-                    <br>
-                    <label for="nombre">Numero de identificacion:</label>
-                    <input type="text" id="identificacion" name="identificacion" required>
-                    <br>
-                    <br>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                    <label for="apellido">Apellidos:</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+                    <label for="identificacion">Numero de identificacion (Usuario):</label>
+                    <input type="text" id="identificacion" name="identificacion" placeholder="Identificacion" required>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <br>
-                    <br>
+                    <input type="email" id="email" name="email" placeholder="xxxxx@ejemplo.com" required
+                        autocomplete="email">
                     <label for="password">Contraseña:</label>
-                    <input type="password" id="password" name="password" required>
-                    <br>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required
+                        autocomplete="new-password">
+                    <label for="password_confirm">Confirme contraseña:</label>
+                    <input type="password" id="password_confirm" name="password_confirm"
+                        placeholder="Confirme contraseña" required autocomplete="new-password">
                     <br>
                     <button class="register" type="submit" name="btnRegister">Continuar</button>
                     <button class="close" id="closeModalBtn">Cerrar</button>
@@ -106,12 +102,10 @@ if (isset($_GET['status'])) {
             <div class="modal-content-login">
                 <h2>Iniciar sesión</h2>
                 <form action="back/login.php" method="post" id="login-form">
-                    <br>
-                    <input name="usuario" type="text" placeholder="Usuario" id="username">
-                    <br>
-                    <br>
-                    <input name="contrasena" type="password" placeholder="Contraseña" id="password">
-                    <br>
+                    <input name="usuario" type="text" placeholder="Usuario" id="username" required
+                        autocomplete="username">
+                    <input name="contrasena" type="password" placeholder="Contraseña" id="password_login" required
+                        autocomplete="new-password">
                     <br>
                     <button name="login_btn" class="login" type="submit">Iniciar sesión</button>
                     <button class="close-login" id="close-modal-login">Cerrar</button>
@@ -119,6 +113,7 @@ if (isset($_GET['status'])) {
             </div>
         </div>
     </section>
+
 
     <!-- lineas -->
     <section id="lineas">
@@ -218,9 +213,9 @@ if (isset($_GET['status'])) {
             <span>© Copyright 2023 | Pagina creada por maniagva</span>
         </div>
     </footer>
-
     <script src="js/script_menu.js"></script>
     <script src="js/script_modal.js"></script>
+    <script src="js/script_contrasena.js"></script>
 </body>
 
 </html>

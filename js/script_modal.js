@@ -33,20 +33,6 @@ window.onclick = function (event) {
     }
 }
 
-// Formulario de registro
-// registrationForm.onsubmit = function (event) {
-//     event.preventDefault();
-
-//     // Obtener los valores del formulario
-//     var nombre = document.getElementById("nombre").value;
-//     var apellido = document.getElementById("apellido").value;
-//     var identificacion = document.getElementById('identificacion').value;
-//     var email = document.getElementById("email").value;
-//     var password = document.getElementById("password").value;
-
-//     hideModal();
-// }
-
 // Eventos para abrir y cerrar el modal de login
 openModalButton.addEventListener('click', function () {
     loginModal.style.display = 'block';

@@ -392,6 +392,7 @@ footer .main_footer{
 }
 footer .main_footer .datos_contacto {
   padding-left: 25%;
+  width: auto;
 }
 footer .main_footer .redes_sociales {
   padding-left: 0%;

@@ -9,6 +9,7 @@ if (isset($_POST['btnRegister'])) {
     $email = $_POST['email'];
     $pass = $_POST['password'];
 
+    // $pass_en = password_hash($pass, PASSWORD_BCRYPT);
     $pass_en = base64_encode($pass);
 
     $validacion = mysqli_query($conexion, "SELECT * FROM usuarios where identificacion = '$identificacion'");
