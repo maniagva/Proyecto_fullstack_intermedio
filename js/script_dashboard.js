@@ -42,3 +42,16 @@ sidebar.addEventListener('click', function() {
   document.querySelector('#content').classList.toggle("active");
   this.classList.toggle("active");
 });
+
+function mostrarModulo(modulo) {
+
+  var modulos = document.querySelectorAll(".modulo");
+  modulos.forEach(function (mod) {
+      mod.style.display = "none";
+  });
+
+  var moduloMostrado = document.getElementById(modulo);
+  if (moduloMostrado) {
+      moduloMostrado.style.display = "block";
+  }
+}

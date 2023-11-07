@@ -27,10 +27,10 @@ function validarPassword () {
   }
   
   if (p1 != p2) {
-   alert("Las contraseña deben de coincidir");
+   alert("Las contraseñas no coinciden");
    return false;
   } else {
-   alert("Las contraseñas estan correctas");
+
    return true; 
   }
  }

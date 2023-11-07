@@ -241,3 +241,9 @@
     background-color: var(--color-2c);
     color: white;
   }
+  
+  /* estilo adicional opc1 */
+
+  #modulo1, #modulo2, #modulo3, #modulo4{
+    display: none;
+  }
