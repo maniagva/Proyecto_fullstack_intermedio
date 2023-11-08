@@ -43,6 +43,7 @@ sidebar.addEventListener('click', function() {
   this.classList.toggle("active");
 });
 
+/*mostrar modulos*/
 function mostrarModulo(modulo) {
 
   var modulos = document.querySelectorAll(".modulo");

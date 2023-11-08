@@ -3,9 +3,11 @@
 if (isset($_GET['status'])) {
     if ($_GET['status'] == 1) {
         echo '<script>alert("registro éxitoso");</script>';
+
     }
     if ($_GET['status'] == 2) {
         echo '<script>alert("Usuario ya existe");</script>';
+
     }
     if ($_GET['status'] == 3) {
         echo '<script>alert("Usuario o Contraseña incorrecto");</script>';
@@ -26,6 +28,7 @@ if (isset($_GET['status'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles_modal.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/styles_dashboard.css">
     <title>Mujari cafe y cacao</title>
 </head>
 

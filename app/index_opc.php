@@ -49,7 +49,7 @@
                                     class="bi bi-box"></i>Clientes</a>
                             <div id="components" class="dropdown-content">
                                 <a href="#">Crear</a>
-                                <a href="../app/verClientes.php">Ver</a>
+                                <a href="../database/verClientes.php">Ver</a>
                                 <a href="#">Actualizar</a>
                                 <a href="#">Borrar</a>
                             </div>

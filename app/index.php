@@ -25,7 +25,7 @@ $query = mysqli_query($conexion, "SELECT * FROM usuarios")
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
         crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../css/styles_dashboard _opc1.css">
+    <link rel="stylesheet" href="../css/styles_dashboard.css">
 </head>
 
 <body>
