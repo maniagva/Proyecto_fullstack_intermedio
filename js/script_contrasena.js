@@ -12,22 +12,22 @@ function validarPassword () {
 	}
    
   if (espacios) {
-   alert ("La contraseña no puede contener espacios en blanco");
+   Swal.fire("¡La contraseña no puede contener espacios en blanco!", "", "warning");
    return false;
   }
    
   if (p1.length == 0 || p2.length == 0) {
-   alert("Los campos de la contraseña no pueden quedar vacios");
+   Swal.fire("¡Los campos de la contraseña no pueden quedar vacios!", "", "warning");
    return false;
   }
   
   if (p1.length < 8) {
-    alert("La contraseña debe tener al menos 8 caracteres");
+    Swal.fire("¡La contraseña debe tener al menos 8 caracteres!", "", "warning");
     return false;
   }
   
   if (p1 != p2) {
-   alert("Las contraseñas no coinciden");
+    Swal.fire("¡Las contraseñas no coinciden!", "", "warning");
    return false;
   } else {
 

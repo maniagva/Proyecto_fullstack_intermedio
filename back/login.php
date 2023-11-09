@@ -19,7 +19,7 @@ if (isset($_POST['login_btn'])) {
             $_SESSION['usuario'] = $datos['identificacion'];
             $_SESSION['email'] = $datos['email'];
         }
-        header("Location:../app/index.php");
+        header("Location:../app/index.php?status=5");
     } else {
         header('location:../index.php?status=3');
     }

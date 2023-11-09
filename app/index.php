@@ -12,20 +12,6 @@ $nombre_completo = $nombre . ' ' . $apellido;
 
 $query = mysqli_query($conexion, "SELECT * FROM usuarios");
 
-if (isset($_GET['status'])) {
-    if ($_GET['status'] == 1) {
-        echo '<script>alert("registro éxitoso");</script>';
-    }
-    if ($_GET['status'] == 2) {
-        echo '<script>alert("Usuario ya existe");</script>';
-    }
-    if ($_GET['status'] == 3) {
-        echo '<script>alert("Registro actualizado exitosamente");</script>';
-    }
-    if ($_GET['status'] == 4) {
-        echo '<script>alert("Registro borrado ");</script>';
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -39,10 +25,46 @@ if (isset($_GET['status'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
         crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" href="../css/styles_dashboard.css">
 </head>
 
 <body>
+    <?php
+    if (isset($_GET['status'])) {
+        if ($_GET['status'] == 1) {
+            echo '<script>Swal.fire("¡Registro Exitoso!", "", "success");</script>';
+        }
+        if ($_GET['status'] == 2) {
+            echo '<script>Swal.fire("¡Usuario ya existe!", "", "warning");</script>';
+        }
+        if ($_GET['status'] == 3) {
+            echo '<script>Swal.fire("¡Registro actualizado exitosamente!", "", "warning");</script>';
+        }
+        if ($_GET['status'] == 4) {
+            echo '<script>Swal.fire({
+                title: "Estas seguro?",
+                text: "Esto no se puede revertir!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si, borrar!"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire({
+                    title: "Borrado!",
+                    text: "El registro fue borrado.",
+                    icon: "success"
+                  });
+                }
+              });</script> ';
+        }
+        if ($_GET['status'] == 5) {
+            echo '<script>Swal.fire("¡Inicio de sesión exitoso!", "¡Bienvenido!", "success");</script>';
+        }
+    }
+    ?>
     <div class="wrapper">
         <nav class="right" id="sidebar">
             <div class="top">

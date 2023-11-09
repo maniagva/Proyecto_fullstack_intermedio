@@ -9,11 +9,10 @@ if (isset($_POST['btnUpdate'])) {
     $nueva_identificacion = $_POST['nueva_identificacion'];
     $nuevo_email = $_POST['nuevo_email'];
 
-    // Realiza la actualización en la base de datos
     $query = "UPDATE usuarios SET nombre = '$nuevo_nombre', apellido = '$nuevo_apellido', identificacion = '$nueva_identificacion', email = '$nuevo_email' WHERE idusuarios = '$id_cliente'";
 
     if (mysqli_query($conexion, $query)) {
-        header('Location: ../app/index.php?status=3'); // Redirige a la página de dashboard con un mensaje de éxito (puedes personalizarlo)
+        header('Location: ../app/index.php?status=3');
     } else {
         echo "Error al actualizar el cliente: " . mysqli_error($conexion);
     }

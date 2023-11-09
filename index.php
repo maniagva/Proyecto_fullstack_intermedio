@@ -1,21 +1,3 @@
-<?php
-
-if (isset($_GET['status'])) {
-    if ($_GET['status'] == 1) {
-        echo '<script>alert("registro éxitoso");</script>';
-
-    }
-    if ($_GET['status'] == 2) {
-        echo '<script>alert("Usuario ya existe");</script>';
-
-    }
-    if ($_GET['status'] == 3) {
-        echo
-            '<script>alert("Usuario o contraseña incorrectos");</script>';
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,10 +12,28 @@ if (isset($_GET['status'])) {
     <link rel="stylesheet" href="css/styles_modal.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="../css/styles_dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <title>Mujari cafe y cacao</title>
 </head>
 
 <body>
+    <?php
+
+    if (isset($_GET['status'])) {
+        if ($_GET['status'] == 1) {
+            echo '<script>Swal.fire("¡Registro Exitoso!", "", "success");</script>';
+
+        }
+        if ($_GET['status'] == 2) {
+            echo '<script>Swal.fire("¡Usuario ya existe!", "", "warning");</script>';
+
+        }
+        if ($_GET['status'] == 3) {
+            echo
+                '<script>Swal.fire("¡Usuario o contraseña incorrectos!", "", "error");</script>';
+        }
+    }
+    ?>
     <header class="header">
         <nav>
             <div class="logo">
@@ -220,8 +220,6 @@ if (isset($_GET['status'])) {
     <script src="js/script_menu.js"></script>
     <script src="js/script_modal.js"></script>
     <script src="js/script_contrasena.js"></script>
-
-
 </body>
 
 </html>
