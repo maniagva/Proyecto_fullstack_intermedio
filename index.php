@@ -10,7 +10,8 @@ if (isset($_GET['status'])) {
 
     }
     if ($_GET['status'] == 3) {
-        echo '<script>alert("Usuario o Contraseña incorrecto");</script>';
+        echo
+            '<script>alert("Usuario o contraseña incorrectos");</script>';
     }
 }
 ?>
@@ -219,6 +220,8 @@ if (isset($_GET['status'])) {
     <script src="js/script_menu.js"></script>
     <script src="js/script_modal.js"></script>
     <script src="js/script_contrasena.js"></script>
+
+
 </body>
 
 </html>

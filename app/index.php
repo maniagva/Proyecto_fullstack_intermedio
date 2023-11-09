@@ -10,10 +10,23 @@ $email = $_SESSION['email'];
 
 $nombre_completo = $nombre . ' ' . $apellido;
 
-$query = mysqli_query($conexion, "SELECT * FROM usuarios")
+$query = mysqli_query($conexion, "SELECT * FROM usuarios");
 
-
-    ?>
+if (isset($_GET['status'])) {
+    if ($_GET['status'] == 1) {
+        echo '<script>alert("registro éxitoso");</script>';
+    }
+    if ($_GET['status'] == 2) {
+        echo '<script>alert("Usuario ya existe");</script>';
+    }
+    if ($_GET['status'] == 3) {
+        echo '<script>alert("Registro actualizado exitosamente");</script>';
+    }
+    if ($_GET['status'] == 4) {
+        echo '<script>alert("Registro borrado ");</script>';
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +35,7 @@ $query = mysqli_query($conexion, "SELECT * FROM usuarios")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard-Mujari</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
         crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -161,14 +175,97 @@ $query = mysqli_query($conexion, "SELECT * FROM usuarios")
                             </div>
                         </div>
                     </div>
+
                     <div class="modulo" id="modulo2">
-                        <h3>MODULO 2</h3>
+                        <div>
+                            <form action="../back/registro_dashboard.php" method="post" id="registrationForm"
+                                onSubmit="return validarPassword()">
+                                <h3>Registrar Nuevo Cliente</h3>
+                                <div class="form-group">
+                                    <label for="nombre">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre"
+                                        placeholder="Nombre" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellido">Apellido:</label>
+                                    <input type="text" class="form-control" id="apellido" name="apellido"
+                                        placeholder="Apellido" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="identificacion">Numero de identificacion (Usuario):</label>
+                                    <input type="text" class="form-control" id="identificacion" name="identificacion"
+                                        placeholder="Identificacion" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="xxxxx@ejemplo.com" required autocomplete="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Contraseña:</label>
+                                    <input type="password" class="form-control" id="password" name="password"
+                                        placeholder="Contraseña" required autocomplete="new-password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password_confirm">Confirme contraseña:</label>
+                                    <input type="password" class="form-control" id="password_confirm"
+                                        name="password_confirm" placeholder="Confirme contraseña" required
+                                        autocomplete="new-password">
+                                </div>
+                                <br>
+                                <button class="btn_dashboard" type="submit" name="btnRegister">Guardar</button>
+                            </form>
+                        </div>
                     </div>
+
                     <div class="modulo" id="modulo3">
-                        <h3>MODULO 3</h3>
+                        <div>
+                            <form action="../back/actualizar_cliente.php" method="post">
+                                <h3>Actualizar Cliente</h3>
+                                <div class="form-group">
+                                    <label for="id_cliente">ID del Cliente a Actualizar</label>
+                                    <input type="text" class="form-control" id="id_cliente" name="id_cliente"
+                                        placeholder="ID del Cliente" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nuevo_nombre">Nuevo Nombre:</label>
+                                    <input type="text" class="form-control" id="nuevo_nombre" name="nuevo_nombre"
+                                        placeholder="Nuevo Nombre" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nuevo_apellido">Nuevo Apellido:</label>
+                                    <input type="text" class="form-control" id="nuevo_apellido" name="nuevo_apellido"
+                                        placeholder="Nuevo Apellido" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nueva_identificacion">Nueva Identificación:</label>
+                                    <input type="text" class="form-control" id="nueva_identificacion"
+                                        name="nueva_identificacion" placeholder="Nueva Identificación" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nuevo_email">Nuevo Email:</label>
+                                    <input type="email" class="form-control" id="nuevo_email" name="nuevo_email"
+                                        placeholder="Nuevo Email" required>
+                                </div>
+                                <br>
+                                <button class="btn_dashboard" type="submit" name="btnUpdate">Actualizar</button>
+                            </form>
+                        </div>
                     </div>
+
                     <div class="modulo" id="modulo4">
-                        <h3>MODULO 4</h3>
+
+                        <div>
+                            <form action="../back/eliminar_cliente.php" method="post">
+                                <h3>Eliminar Cliente</h3>
+                                <div class="form-group">
+                                    <label for="id_cliente">ID del Cliente a Eliminar:</label>
+                                    <input type="text" class="form-control" id="id_cliente" name="id_cliente"
+                                        placeholder="ID del Cliente" required>
+                                </div>
+                                <button class="btn_dashboard" type="submit" name="btnDelete">Eliminar Cliente</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -177,5 +274,6 @@ $query = mysqli_query($conexion, "SELECT * FROM usuarios")
 </body>
 <script src="../js/script_dashboard.js"></script>
 <script src="../js/script_tabla.js"></script>
+<script src="../js/script_contrasena.js"></script>
 
 </html>

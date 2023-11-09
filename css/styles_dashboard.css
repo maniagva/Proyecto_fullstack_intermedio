@@ -55,10 +55,11 @@
   
   nav.right div.top .card {
     position: absolute;
-    top: 50%;
+    top: 0%;
     transform: translateY(-50%);
-    overflow: hidden;
-    display: flex;
+    overflow: auto;
+    /* display: block; */
+    display: contents;
     align-items: center;
   }
   
@@ -244,4 +245,29 @@
 
   #modulo1, #modulo2, #modulo3, #modulo4{
     display: none;
+  }
+
+  form {
+    color: #280703;
+    max-width: 60%;
+    margin: auto;
+    padding: 20px;
+    background-color: #2E574F;
+    border-radius: 6px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1),
+    0 3px 4px 0 rgba(0, 0, 0, 0.1);
+
+  }
+
+  form h3 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .btn_dashboard {
+    color: #280703 !important;
+    background-color: #d3c84f !important;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
   }
