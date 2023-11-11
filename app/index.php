@@ -26,6 +26,7 @@ $query = mysqli_query($conexion, "SELECT * FROM usuarios");
         crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="../css/styles_dashboard.css">
 </head>
 
@@ -87,7 +88,8 @@ $query = mysqli_query($conexion, "SELECT * FROM usuarios");
             <div class="container-menu">
                 <ul class="menu">
                     <li>
-                        <a href="#" class="nav-link"><i class="bi bi-collection"></i>Ventas</a>
+                        <a href="#ventas" class="nav-link" onclick="mostrarModulo('ventas')"><i
+                                class="bi bi-collection"></i>Ventas</a>
                     </li>
                     <li>
                         <a href="#" class="nav-link" data-toggle="dropdown" data-menu="components"><i
@@ -124,6 +126,10 @@ $query = mysqli_query($conexion, "SELECT * FROM usuarios");
                 </div>
             </nav>
             <section id="general-section">
+                <section class="modulo" id="ventas">
+                    <div id="grafica">
+                    </div>
+                </section>
                 <div class="principal">
                     <div class="modulo" id="modulo1">
                         <h3>Listado Clientes</h3>
@@ -289,6 +295,7 @@ $query = mysqli_query($conexion, "SELECT * FROM usuarios");
                             </form>
                         </div>
                     </div>
+
                 </div>
             </section>
         </div>
@@ -297,5 +304,6 @@ $query = mysqli_query($conexion, "SELECT * FROM usuarios");
 <script src="../js/script_dashboard.js"></script>
 <script src="../js/script_tabla.js"></script>
 <script src="../js/script_contrasena.js"></script>
+<script src="../js/grafica.js"></script>
 
 </html>
